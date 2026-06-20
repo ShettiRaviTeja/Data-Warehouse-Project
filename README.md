@@ -148,7 +148,7 @@ The Gold layer contains business-ready dimensional models designed for reporting
 | Repository      | GitHub     |
 | Documentation   | Markdown   |
 
-## Concepts Covered
+## 📚 Concepts Covered
 
 * Data Warehousing
 * ETL / ELT
@@ -164,7 +164,7 @@ The Gold layer contains business-ready dimensional models designed for reporting
 * Surrogate Keys
 * Data Quality Management
 
-## Author
+## 👨‍💻 Author
 
 Ravi Teja Shettigari
 
