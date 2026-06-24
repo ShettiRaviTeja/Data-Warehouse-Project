@@ -23,7 +23,7 @@ Key Metrics:
 - Last Purchase Date
 - Customer Lifespan
 */
-CREATE VIEW vw_customer_sales_summary AS
+CREATE VIEW gold.vw_customer_sales_summary AS
 	SELECT 
 		c.customer_id,
 		CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
