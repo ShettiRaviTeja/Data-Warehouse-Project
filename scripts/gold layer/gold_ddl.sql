@@ -62,3 +62,8 @@ CREATE TABLE gold.fact_sales
 	quantity INT,
 	price INT
 );
+
+
+-- Creating the indexes for fact_sales table:
+CREATE INDEX idx_fact_sales_customer_key ON gold.fact_sales(customer_key);
+CREATE INDEX idx_fact_sales_product_key ON gold.fact_sales(product_key);
