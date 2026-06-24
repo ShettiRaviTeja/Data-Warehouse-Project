@@ -62,14 +62,3 @@ CREATE TABLE gold.fact_sales
 	quantity INT,
 	price INT
 );
-
--- Foreign Keys
-ALTER TABLE gold.fact_sales
-ADD CONSTRAINT FK_fact_sales_customer
-FOREIGN KEY (customer_key)
-REFERENCES gold.dim_customers(customer_key);
-
-ALTER TABLE gold.fact_sales
-ADD CONSTRAINT FK_fact_sales_product
-FOREIGN KEY (product_key)
-REFERENCES gold.dim_products(product_key);
