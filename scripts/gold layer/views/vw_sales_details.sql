@@ -1,4 +1,14 @@
--- vw_sales_details
+/*
+View Name: vw_sales_details
+
+Purpose:
+Combines sales, customer, and product information
+for detailed sales reporting and analysis.
+
+Grain:
+One Row = One Sales Transaction
+*/
+
 SELECT 
 	f.order_number,
 	f.order_date,
