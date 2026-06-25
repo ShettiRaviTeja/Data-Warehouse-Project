@@ -8,9 +8,12 @@ The project follows the **Medallion Architecture** approach with Bronze, Silver,
 
 ---
 
-## Data Architecture
+## 🏛️ Data Architecture
 
-<img width="1313" height="773" alt="Data Architecture" src="https://github.com/user-attachments/assets/46ea5b9a-b0c0-4631-a6eb-141f6dc70c4c" />
+The data warehouse follows the Medallion Architecture (Bronze, Silver, Gold) to ensure scalable and maintainable data processing.
+<p align="center">
+  <img src="docs/images/data_architecture.png" width="900">
+</p>
 
 ### Architecture Flow
 
