@@ -2,17 +2,16 @@
 
 ## 📖 About the Project
 
-This project demonstrates the development of a modern Data Warehouse using SQL Server. The goal is to integrate data from multiple source systems, clean and standardize the data, and transform it into a business-ready format for reporting and analytics.
+This project demonstrates the design and implementation of a modern **SQL Server Data Warehouse** following the **Medallion Architecture (Bronze, Silver, Gold)**. Data from multiple CRM and ERP source systems is extracted, cleansed, standardized, integrated, and transformed into a business-ready dimensional model for reporting and analytics.
 
-The project follows the **Medallion Architecture** approach with Bronze, Silver, and Gold layers.
+The project covers the complete Data Warehouse development lifecycle, including data ingestion, ETL processing, dimensional modeling, and reporting layer creation using SQL Server.
 
 ---
 
-## 🏛️ Data Architecture
+# 🏛️ Data Architecture
 
-The data warehouse follows the Medallion Architecture (Bronze, Silver, Gold) to ensure scalable and maintainable data processing.
 <p align="center">
-  <img src="docs/images/data_architecture.png" width="900">
+  <img src="docs/Data Architecture.png" width="900">
 </p>
 
 ### Architecture Flow
@@ -25,20 +24,23 @@ Bronze Layer
 Silver Layer
       ↓
 Gold Layer
+      ↓
+Business Users / BI Tools
 ```
+
 ---
 
-## Source Systems
+# 📂 Source Systems
 
-The project integrates data from the following source systems:
+The warehouse integrates data from two operational systems.
 
-### 🧑‍💼 CRM
+## 🧑‍💼 CRM System
 
 * Customer Information
 * Product Information
 * Sales Details
 
-### 🏢 ERP
+## 🏢 ERP System
 
 * Customer Demographics
 * Customer Location Information
@@ -46,16 +48,16 @@ The project integrates data from the following source systems:
 
 ---
 
-## 🥉 Bronze Layer
+# 🥉 Bronze Layer (Raw Data)
 
-The Bronze layer stores raw data without applying any business transformations.
+The Bronze layer stores raw data exactly as received from the source systems.
 
-### Activities
+### Features
 
-* Data Ingestion
+* Raw Data Ingestion
 * Full Load Processing
-* Raw Data Storage
 * Source Data Preservation
+* Minimal Transformations
 
 ### Tables
 
@@ -68,22 +70,22 @@ The Bronze layer stores raw data without applying any business transformations.
 
 ---
 
-## 🥈 Silver Layer
+# 🥈 Silver Layer (Cleaned Data)
 
-The Silver layer focuses on improving data quality and preparing data for analytics.
+The Silver layer cleanses, validates, standardizes, and enriches the data before loading it into the analytical model.
 
 ### Transformations Performed
 
 * Data Type Conversion
-* Data Validation
 * Duplicate Removal
 * Null Handling
-* Date Standardization
+* Data Validation
+* Business Key Standardization
 * Country Standardization
 * Gender Standardization
-* Business Key Standardization
 * Product History Tracking
 * Data Quality Checks
+* Business Rule Implementation
 
 ### Example Transformations
 
@@ -115,60 +117,110 @@ United States
 
 ---
 
-## 🥇 Gold Layer
+# 🥇 Gold Layer (Business-Ready Data)
 
-The Gold layer contains business-ready dimensional models designed for reporting and analytics.
+The Gold layer implements a dimensional model using a **Star Schema** optimized for reporting and analytics.
 
-### Data Modeling Approach
+## ⭐ Data Modeling Approach
 
-**Star Schema**
+Star Schema
 
 ### Dimension Tables
 
 * dim_customers
 * dim_products
 
-### Fact Tables
+### Fact Table
 
 * fact_sales
 
-### Key Features
+### Reporting Views
 
+* vw_sales_details
+* vw_customer_sales_summary
+* vw_product_sales_summary
+* vw_country_sales_summary
+* vw_sales_trends
+* vw_sales_kpis
+
+### Gold Layer Features
+
+* Star Schema
 * Surrogate Keys
 * Business-Friendly Data Model
-* Optimized for Reporting
+* Reporting Views
+* Business KPIs
+* Optimized for Analytics
 * Single Source of Truth
 
 ---
 
-## Technologies Used
+# 📊 Reporting Views
 
-| Category        | Technology |
-| --------------- | ---------- |
-| Database        | SQL Server |
-| Language        | T-SQL      |
-| Version Control | Git        |
-| Repository      | GitHub     |
-| Documentation   | Markdown   |
+The reporting layer provides reusable business-ready views for dashboards and analytics.
 
-## 📚 Concepts Covered
+| View                      | Grain                 | Purpose                      |
+| ------------------------- | --------------------- | ---------------------------- |
+| vw_sales_details          | One Sales Transaction | Detailed sales reporting     |
+| vw_customer_sales_summary | One Customer          | Customer analytics           |
+| vw_product_sales_summary  | One Product           | Product performance analysis |
+| vw_country_sales_summary  | One Country           | Country-wise sales analysis  |
+| vw_sales_trends           | One Month             | Monthly sales trend analysis |
+| vw_sales_kpis             | Entire Business       | Executive KPI dashboard      |
+
+---
+
+# 🛠️ Technologies Used
+
+| Category        | Technology             |
+| --------------- | ---------------------- |
+| Database        | SQL Server             |
+| Language        | T-SQL                  |
+| Architecture    | Medallion Architecture |
+| Data Model      | Star Schema            |
+| Version Control | Git                    |
+| Repository      | GitHub                 |
+| Documentation   | Markdown               |
+| Diagramming     | Draw.io                |
+
+---
+
+# 📚 Concepts Covered
 
 * Data Warehousing
 * ETL / ELT
+* Medallion Architecture
 * Data Ingestion
 * Data Cleansing
 * Data Validation
 * Data Standardization
 * Data Harmonization
-* Data Modeling
+* Dimensional Modeling
 * Star Schema
 * Fact Tables
 * Dimension Tables
 * Surrogate Keys
+* Business Keys
+* Reporting Layer Design
+* SQL Views
+* KPI Reporting
 * Data Quality Management
 
-## 👨‍💻 Author
+---
 
-Ravi Teja Shettigari
+# 🚀 Future Enhancements
 
-This project was built as part of my Data Engineering and Data Warehousing learning journey.
+* Power BI Dashboard
+* Incremental Data Loading
+* Change Data Capture (CDC)
+* SQL Agent Job Scheduling
+* Data Quality Monitoring
+* Automated ETL Pipeline
+
+---
+
+# 👨‍💻 Author
+
+**Ravi Teja Shettigari**
+
+This project was built as part of my Data Engineering and Data Warehousing learning journey to strengthen practical skills in SQL, ETL, dimensional modeling, and business reporting.
