@@ -208,6 +208,61 @@ The reporting layer provides reusable business-ready views for dashboards and an
 
 ---
 
+## 📁 Project Structure
+
+```text
+sql-data-warehouse-project/
+│
+├── datasets/
+│   ├── crm_source/
+│   │   ├── cust_info.csv
+│   │   ├── prd_info.csv
+│   │   └── sales_details.csv
+│   │
+│   └── erp_source/
+│       ├── cust_az12.csv
+│       ├── loc_a101.csv
+│       └── px_cat_g1v2.csv
+│
+├── docs/
+│   ├── Data Architecture.png
+│   ├── Data Flow Diagram.png
+│   ├── Integration Model.png
+│   ├── Star Schema.png
+│   └── data_dictionary.md
+│
+├── scripts/
+│   ├── database_init.sql
+│   │
+│   ├── bronze_layer/
+│   │   ├── bronze_ddl.sql
+│   │   └── sp_load_bronze.sql
+│   │
+│   ├── silver_layer/
+│   │   ├── silver_ddl.sql
+│   │   └── sp_load_silver.sql
+│   │
+│   └── gold_layer/
+│       ├── gold_ddl.sql
+│       ├── indexes.sql
+│       ├── sp_load_gold.sql
+│       │
+│       └── views/
+│           ├── vw_sales_details.sql
+│           ├── vw_customer_sales_summary.sql
+│           ├── vw_product_sales_summary.sql
+│           ├── vw_country_sales_summary.sql
+│           ├── vw_sales_trends.sql
+│           └── vw_sales_kpis.sql
+│
+├── tests/
+│   ├── silver_quality_checks.sql
+│   └── gold_quality_checks.sql
+│
+└── README.md
+```
+---
+
 # 🚀 Future Enhancements
 
 * Power BI Dashboard
