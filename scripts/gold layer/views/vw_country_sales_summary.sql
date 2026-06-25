@@ -21,7 +21,7 @@ Key Metrics:
 - Total Quantity Sold
 - Average Order Value
 */
-CREATE VIEW vw_country_sales_summary AS
+CREATE VIEW gold.vw_country_sales_summary AS
   SELECT 
   	c.country,
   	SUM(f.sales_amount) AS total_sales,
